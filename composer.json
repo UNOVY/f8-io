@@ -1,0 +1,62 @@
+{
+    "name": "f8/io",
+    "description": "Task I/O",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "UNOVY UG (haftungsbeschränkt)",
+            "email": "f8@unovy.io",
+            "homepage": "https://www.unovy.com/"
+        },
+        {
+            "name": "Florian Gärber",
+            "email": "florian@unovy.io",
+            "homepage": "https://florian.sh/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/UNOVY/f8-io/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "F8\\IO\\": "lib"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "psalm",
+        "phpstan": "phpstan analyse lib --memory-limit=512M",
+        "sa": [
+            "@test:stan",
+            "@test:psalm"
+        ],
+        "phpcs": "php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run",
+        "phpunit": "phpunit --testdox",
+        "test": [
+            "@phpcs",
+            "@phpstan",
+            "@psalm",
+            "@phpunit"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpstan/phpstan": "^0.12.25",
+        "phpunit/phpunit": "^9.1",
+        "vimeo/psalm": "^3.11"
+    },
+    "require": {
+        "php": "^7.4"
+    }
+}
