@@ -33,10 +33,6 @@
     "scripts": {
         "psalm": "psalm",
         "phpstan": "phpstan analyse lib --memory-limit=512M",
-        "sa": [
-            "@test:stan",
-            "@test:psalm"
-        ],
         "phpcs": "php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run",
         "phpunit": "phpunit --testdox",
         "test": [
